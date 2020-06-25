@@ -1,6 +1,12 @@
 @import '../../../styles/settings';
 
 .hero {
+  padding: 20px 0 44px;
+  
+  @include media(lg) {
+    padding: 50px 0 53px;
+  }
+
   &__inner {
     display: grid;
     grid-template-columns: 1fr;
@@ -11,6 +17,9 @@
 
     @include media(lg) {
       grid-template-columns: 485px 1fr;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0;
     }
   }
 
@@ -18,23 +27,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include media(lg) {
+      justify-content: flex-start;
+    }
   }
 
   &__title {
     font-size: 36px;
     font-weight: 400;
     line-height: 1.2;
+    margin: 0;
 
     @include media(md) {
       font-size: 48px;
     }
 
     @include media(lg) {
-      font-size: 64px;
-    }
-
-    @include media(xl) {
       font-size: 75px;
+      padding: 0 12px;
     }
   }
 

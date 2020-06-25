@@ -1,0 +1,158 @@
+@import '../../../styles/settings';
+
+.pricing {
+  padding: 41px 0 63px;    
+  background-color: $gray-xlight;
+
+
+  @include media(lg) {
+    padding: 113px 0 100px;
+  }
+
+  &__email {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 37px auto;
+    color: $black;
+    margin-bottom: 37px;
+
+    @include media(lg) {
+      margin: 0 auto 52px auto;
+    }
+
+    label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      height: 60px;
+      padding: 20px 25px;
+      line-height: 20px;
+      font-size: 16px;
+
+      &::placeholder {
+        color: #808E95;
+      }
+    }
+  }
+
+  &__options {
+    max-width: 400px;
+    margin: 0 auto 37px auto;
+
+    @include media(lg) {
+      margin: 0 auto 53px auto;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+  }
+
+  &__options__content {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-column-gap: 20px;
+    justify-content: center;
+    width: 100%;
+
+
+    @include media(md) {
+      grid-column-gap: 42px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 100px;
+    position: relative;
+    background-color: $gray;
+    border-radius: 4px;
+    color: $black;
+    font-weight: 600;
+
+    &__price {
+      display: flex;
+      align-items: center;
+      font-size: 45px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    &__currency {
+      align-self: start;
+      font-size: 24px;
+      margin-top: 6px;
+    }
+
+    &__period {
+      font-size: 12px;
+      line-height: 1;
+    }
+
+
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: $white;
+      border-radius: 50%;
+      top: 8px;
+      left: 8px;
+    }
+
+    &.active {
+      background-color: $orange-dark;
+      color: $white;
+
+      &:before {
+        background-color: $purple-dark;
+      }
+    }
+  }
+  
+  &__error {
+    background-color: $red;
+    color: $white;
+    font-weight: 600;
+    padding: 10px 25px;
+    margin-top: 10px;
+  }
+
+  &__submit {
+    display: block;
+    background-color: $purple;
+    color: $white;
+    font-weight: 600;
+    height: 47px;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 19px;
+    width: 100%;
+    text-align: center;
+    outline: 0;
+    border: 0;
+    transition: .4s background-color ease-in-out;
+
+    @include media(md) {
+      width: 202px;
+      margin: 0 auto;
+    }
+
+    &:hover {
+      background-color: darken($purple, 10%);
+    }
+  }
+}
