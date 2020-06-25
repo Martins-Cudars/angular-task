@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-task';
+  title: string = 'angular-task';
+  modalVisible: boolean = false
+
+  closeModal() {
+    this.modalVisible = false
+  }
+
+  openModal() {
+    this.modalVisible = true
+  }
 }

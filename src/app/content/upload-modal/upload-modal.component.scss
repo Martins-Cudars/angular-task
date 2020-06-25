@@ -1,0 +1,18 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(79, 79, 79, 0.65) 0%, rgba(51, 51, 51, 0.65) 100%);
+  
+  &__inner {
+    background-color: #e5e5e5;
+    max-width: 400px;
+    width: 100%;
+    padding: 100px 21px;
+  }
+}

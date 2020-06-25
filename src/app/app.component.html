@@ -1,8 +1,8 @@
-<app-site-header></app-site-header>
+<app-site-header (onOpenModal)="openModal()"></app-site-header>
 <!-- <router-outlet></router-outlet> -->
 <app-content-hero></app-content-hero>
 <app-content-pricing></app-content-pricing>
 <app-site-footer></app-site-footer>
-
+<app-upload-modal *ngIf="modalVisible" (onCloseModal)="closeModal()"></app-upload-modal>
 
 

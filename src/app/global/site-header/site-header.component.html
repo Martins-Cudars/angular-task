@@ -3,8 +3,14 @@
     <img src="assets/global/logo.svg" alt="Angular task">
     <ul class="header__nav">
       <li *ngFor="let item of navigation" class="header__nav__item" [ngClass]="{'header__nav__item--icon': item.showIconOnMobile === true}">
-        <a [href]="item.href">
-          <span>{{ item.title }}</span><img src="{{ item.icon }}" *ngIf="item.showIconOnMobile" alt="{{ item.title }}"></a>
+        <a [href]="item.href" (click)="openModal()" *ngIf="item.openModalOnClick; else normalLink">
+          <span>{{ item.title }}</span><img src="{{ item.icon }}" *ngIf="item.showIconOnMobile" alt="{{ item.title }}">
+        </a>
+          <ng-template #normalLink>
+            <a [href]="item.href" *ngIf="!item.openModalOnClick">
+              <span>{{ item.title }}</span><img src="{{ item.icon }}" *ngIf="item.showIconOnMobile" alt="{{ item.title }}">
+            </a>
+          </ng-template>
       </li>
     </ul>
   </div>

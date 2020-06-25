@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-site-header',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./site-header.component.scss']
 })
 export class SiteHeaderComponent implements OnInit {
-
+  @Output() onOpenModal = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
@@ -16,15 +16,22 @@ export class SiteHeaderComponent implements OnInit {
     {
       title: 'Pricing',
       href: '#pricing',
+      openModalOnClick: false,
       icon: null,
       showIconOnMobile: false
     },
     {
       title: 'Upload',
       href: '#upload',
+      openModalOnClick: true,
       icon: 'assets/global/upload.svg',
       showIconOnMobile: true
     }
   ]
+
+  openModal() {
+    console.log('openmodal')
+    this.onOpenModal.emit()
+  }
 
 }
