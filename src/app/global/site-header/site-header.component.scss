@@ -1,0 +1,66 @@
+@import '../../../styles/settings';
+
+.header {
+  background-color: $orange;
+  
+  &__inner {
+    display: flex;
+  }
+
+  &__nav {
+    margin-left: auto;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+
+    &__item {
+      display: flex;
+      align-items: center;
+
+      a {
+        display: flex;
+        padding: 13px;
+        border: 1px solid transparent;
+        color: $black-dark;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+
+        @include media(md) {
+          padding: 13px 28px;
+        }
+      }
+
+      img {
+        display: none;
+      }
+
+      &--icon {
+        a {
+          @include media(md) {
+            border-color: $white;
+            border-radius: 4px;
+          }
+        }
+
+        img {
+          display: block;
+          width: 24px;
+          height: auto;
+
+          @include media (md) {
+            display: none;
+          }
+        }
+
+        span {
+          display: none;
+
+          @include media (md) {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+}

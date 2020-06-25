@@ -1,0 +1,17 @@
+@import '../../../styles/settings';
+
+:host {
+  margin-top: auto;
+}
+
+.footer {
+  background-color: $gray-light;
+  height: $footer-height;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}

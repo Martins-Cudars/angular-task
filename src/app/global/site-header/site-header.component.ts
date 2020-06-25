@@ -12,4 +12,19 @@ export class SiteHeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  navigation: any[] = [
+    {
+      title: 'Pricing',
+      href: '#pricing',
+      icon: null,
+      showIconOnMobile: false
+    },
+    {
+      title: 'Upload',
+      href: '#upload',
+      icon: 'assets/global/upload.svg',
+      showIconOnMobile: true
+    }
+  ]
+
 }

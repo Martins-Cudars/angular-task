@@ -1,1 +1,11 @@
-<p>site-header works!</p>
+<header class="header">
+  <div class="container header__inner">
+    <img src="assets/global/logo.svg" alt="Angular task">
+    <ul class="header__nav">
+      <li *ngFor="let item of navigation" class="header__nav__item" [ngClass]="{'header__nav__item--icon': item.showIconOnMobile === true}">
+        <a [href]="item.href">
+          <span>{{ item.title }}</span><img src="{{ item.icon }}" *ngIf="item.showIconOnMobile" alt="{{ item.title }}"></a>
+      </li>
+    </ul>
+  </div>
+</header>
