@@ -1,0 +1,13 @@
+@mixin media($break) {
+  $value: map-get($breakpoints, $break);
+  // border: $value;
+
+  @if $value == null {
+    @error "#{$break} is not a valid breakpoint name";
+  } 
+  
+  @media (min-width: $value) {
+    @content;
+  }
+
+}

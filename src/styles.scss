@@ -1,16 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-/**
-* Colors
-**/
-$white: #FFFFFF;
-$black-dark: #000000;
-$black: #212121;
-$gray-xlight: #FAFAFA;
-$gray-light: #EEEEEE;
-$gray: #F2F2F2;
-$orange: #FFB300;
-$orange-dark: #F4511E;
-$red: #F4511E;
-$blue: #4527A0;
+@import 'styles/settings';
+@import 'styles/global/'
