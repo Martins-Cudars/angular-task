@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'angular-task';
-  modalVisible: boolean = false
+  modalVisible: boolean = true
 
   closeModal() {
     this.modalVisible = false

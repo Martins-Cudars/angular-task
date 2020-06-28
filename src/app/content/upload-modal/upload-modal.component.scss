@@ -1,3 +1,5 @@
+@import '../../../styles/settings';
+
 .modal {
   position: fixed;
   top: 0;
@@ -11,8 +13,69 @@
   
   &__inner {
     background-color: #e5e5e5;
-    max-width: 400px;
     width: 100%;
-    padding: 100px 21px;
+    height: 100%;
+    padding: 100px 21px 20px 21px;
+
+    @include media(sm) {
+      max-width: 400px;
+      height: auto;
+    }
+  }
+  
+  &__title {
+    font-size: 34px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 50px 0;
+  }
+
+  &__close {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+
+    &__btn {
+      border: 0;
+      outline: 0;
+      color: $orange-dark;
+      font-size: 18px;
+      background-color: transparent;
+    }
+  }
+}
+
+.upload-zone {
+  position: relative;
+  width: 358px;
+  height: 211px;
+  padding: 50px 50px 20px 50px;
+  text-align: center;
+  border: 3px dashed #B0BEC5;
+  margin: 0 auto;
+
+  &__input {
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__title {
+    margin: 35px 0 0 0;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #808E95;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #808E95;
   }
 }

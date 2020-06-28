@@ -10,7 +10,8 @@ import { SiteFooterComponent } from './global/site-footer/site-footer.component'
 import { ContentHeroComponent } from './content/hero/content-hero.component'
 import { PricingComponent } from './content/pricing/pricing.component'
 import { PricingService } from './content/pricing/pricing.service';
-import { UploadModalComponent } from './content/upload-modal/upload-modal.component'
+import { UploadModalComponent } from './content/upload-modal/upload-modal.component';
+import { DndDirective } from './dnd.directive'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UploadModalComponent } from './content/upload-modal/upload-modal.compon
     SiteFooterComponent,
     ContentHeroComponent,
     PricingComponent,
-    UploadModalComponent
+    UploadModalComponent,
+    DndDirective
   ],
   imports: [
     BrowserModule,

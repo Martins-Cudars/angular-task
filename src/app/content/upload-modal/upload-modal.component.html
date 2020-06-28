@@ -1,7 +1,21 @@
 <div class="modal">
   <div class="modal__inner">
-    This be modal
+    <h2 class="modal__title">Upload your files</h2>
+    <div class="upload-zone" appDnd (fileDropped)="onFileDropped($event)">
+      <input type="file" class="upload-zone__input" #uploadDrop id="uploadDrop" multiple (change)="uploadHandler($event.target.files)">
+      <img class="upload-zone__icon" src="assets/global/upload-orange.svg" alt="Drag files to upload">
+      <p class="upload-zone__title">Drop your files here</p>
+      <label for="uploadDrop" class="upload-zone__subtitle">or choose from your <span class="text-orange">computer</span></label>
+    </div>
 
-    <button type="button" (click)="closeModal()">Close</button>
+    <div *ngIf="files && files.length > 0">
+      <h2>Selected Files</h2>
+      <div *ngFor="let file of files">
+        {{ file.name }}
+      </div>
+    </div>
+    <div class="modal__close">
+      <button type="button" (click)="closeModal()" class="modal__close__btn">Close</button>
+    </div>
   </div>
 </div>
