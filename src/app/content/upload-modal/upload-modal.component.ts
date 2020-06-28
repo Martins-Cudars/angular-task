@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, EventEmitter, Output, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-upload-modal',
@@ -9,11 +9,15 @@ export class UploadModalComponent implements OnInit {
   @ViewChild("uploadDrop", { static: false }) uploadDrop: ElementRef;
   @Output() onCloseModal = new EventEmitter()
   files: any[] = []
-  testVar: string = 'test'
 
-  constructor() { }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    this.renderer.addClass(document.body, 'modal-open');
+  }
+
+  ngOnDestroy() {
+    this.renderer.removeClass(document.body, 'modal-open');
   }
 
   closeModal() {
@@ -21,12 +25,10 @@ export class UploadModalComponent implements OnInit {
   }
 
   onFileDropped($event) {
-    console.log('onFileDropped')
     this.prepareFilesList($event)
   }
 
   uploadHandler(files) {
-    console.log('uploadHandler')
     this.prepareFilesList(files)
   }
 
@@ -37,7 +39,6 @@ export class UploadModalComponent implements OnInit {
     }
     this.uploadDrop.nativeElement.value = "";
     console.log(this.files)
-    // this.uploadFilesSimulator(0)
   }
 
 
